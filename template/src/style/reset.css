@@ -1,0 +1,145 @@
+/*reset样式*/
+input,select{padding:0;outline: 0;border: 0 none;-webkit-tap-highlight-color: transparent;-webkit-appearance:none;background: transparent;}
+body{margin:0;padding:0;-webkit-tap-highlight-color: transparent;}
+body::-webkit-scrollbar{
+	display: none;
+}
+body{
+  -webkit-user-select:none;
+          user-select:none;
+  /*-webkit-transform: translateZ(0); 
+  -moz-transform: translateZ(0); 
+  -ms-transform: translateZ(0); 
+  -o-transform: translateZ(0); 
+  transform: translateZ(0); */
+}
+.u-fobiddenScroll{
+  overflow: hidden;
+}
+/*页面通用样式*/
+
+/*通用1px线条样式，在双倍屏上缩放(需要修改线条颜色可以在元素class上追加 class:after{border-color:color;} 虚线用dashed)*/
+.u-border-bottom:after{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: ''; 
+  width: 100%;
+  border-bottom:solid 1px rgba(0,0,0,0.6);
+  -webkit-transform: scale(1,0.5); 
+  transform: scale(1,0.5); 
+  -webkit-transform-origin: center bottom; 
+  transform-origin: center bottom ;
+}
+.u-border-top:before{
+  position: absolute;
+  content: ''; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom:solid 1px rgba(0,0,0,0.6);
+  -webkit-transform: scale(1,0.5); 
+  transform: scale(1,0.5); 
+  -webkit-transform-origin: center top; 
+  transform-origin: center top ;
+}
+/*通用横穿过样式*/
+
+/*布局通用样式*/
+/*table-固定自适应两列布局样式*/
+.u-grid{width: 100%;display: table;table-layout: fixed;}
+.u-grid-fix{width: 100%;display: table-cell;vertical-align:middle;}
+.u-grid-var{display: table-cell;}
+/*flex-固定自适应两列布局样式*/
+.u-flex{display: flex}
+.u-flex-1{flex:1;}
+
+/*通用按钮样式*/
+a {
+  color: #42b983;
+}
+.router-link-demo-btn{
+  display: block;
+}
+.router-link-demo-btn,.demo-btn{
+  text-decoration: none;
+  height: 0.32rem;
+  line-height: 0.32rem;
+  display: inline-block;
+  width: 48%;
+  font-size: 0.12rem;
+  text-align: center;
+  margin-top: 0.06rem;
+  /*border: solid 0.01rem;*/
+  border-radius: 8px;
+  color: #fff;
+  background: #cec;
+  /*background:linear-gradient(to right, #f5ae7a, #f4a 15%, #f2986f 30%, #f18d6e 45%, #f1856d 60%, #f18676 70%,#f18a87 80%,#f19199 90%,#f295a1);*/
+  /*background: linear-gradient(to right, rgba(244,173,122,0.9), rgba(244,164,117,0.9) 15%,rgba(242,152,111,0.95) 30%,rgba(241,141,110,0.95),rgba(241,133,109,1) 45%,rgba(241,135,120,1) 70%,rgba(241,138,104,1) 80%, rgba(241,145,153,0.9) 90%, rgba(242,149,161,0.9))*/
+  background: linear-gradient(to right, #f5ae7a,#f4a475,#f39c71,#f2936f,#f18c6e,#f1876d,#f18670,#f18672,#f18676,#f18678,#f18680,#f18981,#f18d8e,#f19199,#f295a1);
+}
+
+.u-btn-color1{
+  text-decoration: none;
+  background: #f5ae7a;
+  background: linear-gradient(to right, #f5ae7a,#f4a475,#f39c71,#f2936f,#f18c6e,#f1876d,#f18670,#f18672,#f18676,#f18678,#f18680,#f18981,#f18d8e,#f19199,#f295a1);
+}
+.footer .btn,
+.footer .btn:visited,
+.footer .btn:hover,
+.footer .btn:active{
+	display:block;
+	margin:0.15rem auto;
+	width:3.47rem;height:0.45rem;
+	line-height:0.45rem;
+	text-align:center;
+	font-size:0.16rem;
+	color:#fff;
+	cursor:pointer;
+	text-decoration: none;
+	background:linear-gradient(to top, #fd593d,#ff6d3a 50%,#ff9248);
+	border-radius:0.06rem;-webkit-border-radius:0.06rem;
+	-webkit-box-shadow: 0 0.06rem 0.1rem 0 #afa8a4;
+	box-shadow: 0 0.06rem 0.1rem 0 #afa8a4;
+}
+
+
+.u-clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+}
+.u-clearfix {zoom: 1;}
+
+/*高斯模糊通用样式*/
+.u-filter{
+    /*filter: url(blur.svg#blur);  FireFox, Chrome, Opera */
+    -webkit-filter: blur(3px); /* Chrome, Opera */
+       -moz-filter: blur(3px);
+        -ms-filter: blur(3px);    
+            filter: blur(3px); 
+    /*filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3, MakeShadow=false);  IE6~IE9 */
+}
+
+
+/*遮罩通用样式*/
+.u-dn{display: none !important;}
+.u-dt{display: table !important;}
+.u-db{display: block !important;}
+/*1. 背景遮罩，内部元素需要自然排列: */
+/*2. 背景遮罩，内部元素需要上下左右居中对齐: 需要添加中间元素disable:table-cell且实际结点需要margin：0 auto;*/
+.u-mask{
+  display: none;
+  position: fixed;
+  z-index:999;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.6);
+}
+.u-mask-middle{display: table-cell;vertical-align: middle;text-align: center;}
+.u-mask-middle>div{margin:0 auto;}
