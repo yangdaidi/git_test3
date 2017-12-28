@@ -36,8 +36,8 @@ module.exports = {
     cssSourceMap: false
   },
   pages: [
-    'miletea',
-    'mileteaBE',
-    'mileteaLandpage',
+    'milktea',
+    'milkteaBE',
+    'milkteaLandpage',
   ],
 }

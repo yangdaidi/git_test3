@@ -53,7 +53,7 @@ import showMask from '../components/showMask'
 import tool from '../store/tool'
 import weixin from '../store/weixin'
 import { fetch } from '../store/fetch'
-import { milkteaAPI } from '../config/api'
+import { milkteaAPI } from '../config/lrs.api'
 
 export default {
   name: 'milkteaBE',
