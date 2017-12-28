@@ -5,6 +5,30 @@
  * ------------------------------------------*/
 class nativeClass {
     constructor() {}
+
+    shareTo(param){
+        if(!window.YixinJSBridge) return;
+        YixinJSBridge.call('shareTo', param);
+    }
+    shareToYixin(param){
+        if(!window.YixinJSBridge) return;
+        YixinJSBridge.call('shareToYixin', param);
+    }
+
+    shareToYixinTimeline(param){
+        if(!window.YixinJSBridge) return;
+        YixinJSBridge.call('shareToYixinTimeline', param);
+    }
+
+    // description: 获取用户和家庭圈信息(测试通过)
+    // method     : call
+    // param      : callback
+    dispatchUrl(url){
+        if(!window.YixinJSBridge) return;
+        YixinJSBridge.call('dispatch', {
+            'url': url
+        });
+    }
     // description: 获取用户和家庭圈信息(测试通过)
     // method     : call
     // param      : callback

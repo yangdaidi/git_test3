@@ -1,27 +1,8 @@
- <template>
-    <div class="u-region">
-        <!-- <div class="addr-line u-flex u-border-top">
-            <label class="addr-label">省</label>
-            <select class="u-flex-1 addr-select" v-model="province" v-on:change="upDateCityDate">
-                <option v-for="item in provinceList" :value="item">{{ item }}</option>
-            </select>
-        </div>
-        <div class="addr-line u-flex u-border-top">
-            <label class="addr-label">市</label>
-            <select class="u-flex-1 addr-select" v-model="city" v-on:change="upDateAreaDate">
-                <option v-for="item in cityList" :value="item">{{ item }}</option>
-            </select>
-        </div>
-        <div v-if="areaList.length>0" class="addr-line u-flex u-border-top">
-            <label class="addr-label">县</label>
-            <select class="u-flex-1 addr-select" v-model="area">
-                <option v-for="item in areaList" :value="item">{{ item }}</option>
-            </select>
-        </div> -->
+<template>
+    <div class="ucomp-region">
         <div class="addr-line  u-border-bottom">
             <select id="e_province" class="addr-select" v-model="province" v-on:change="upDateCityDate">
                 <option v-for="(item , index) in provinceList" :value="item" v-show="index">{{ item }}</option>
-                <!-- <option v-for="item in provinceList" :value="item">{{ item }}</option> -->
             </select>
             <!-- <span class="addr-up-arrow"></span> -->
             <select id="e_city" class="addr-select" v-model="city" v-on:change="upDateAreaDate">
@@ -37,7 +18,19 @@
 </template>
 
 <script>
-import area from '../store/area'
+/* ----------------------------------------------------------------------------------------------------------
+ * @description             省市区(县)三级联动组件
+ * @version                 1.0
+ * @author                  hzyangyang2015
+ * @外部pages调用示例：
+ *     1. html模版插入标签：  <city label="address" ref="addr"></city>
+ *     
+ *     2. import组件：       import city from '@/components/city'
+ *                          components: { city }
+ *
+ *     3. 调用组件对象实例：  let compAddr = this.$refs.addr   该对象可以调用组件内部方法，如compAddr.getAddress();
+ * --------------------------------------------------------------------------------------------------------*/
+import area from '../libs/area'
 
 export default {
 	data(){
@@ -79,16 +72,6 @@ export default {
 </script>
 
 <style scoped>
-/*.addr-line{
-  position: relative;
-  height: 0.5rem;
-  vertical-align: middle;
-}
-.addr-label{
-  font-size: 0.14rem;
-  width: 0.7rem;
-  line-height: 0.52rem;
-}*/
 .addr-select{
   width: 1.1rem;
   font-size: 0.14rem;
@@ -110,22 +93,10 @@ export default {
   color: #333;
 }
 .addr-input{
-  /*text-align: right;*/
   font-size: 0.14rem;
   line-height: 0.2rem;
   padding: 0;
   color: #333;
 }
 .addr-input::-webkit-input-placeholder { font-size: 0.12rem; color:#999; }
-/*.addr-up-arrow{
-  display: inline-block;
-  width: 0.11rem;
-  height: 0.48rem;
-  background: url(../assets/icon_jiantou_2@3x.png) no-repeat center;
-  background-size: contain;
-  vertical-align: top;
-}
-select option{
-  direction: rtl;
-}*/
 </style>

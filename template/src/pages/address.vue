@@ -66,7 +66,7 @@ export default {
       // 活动信息
       activityInfo:{},
       // 是否已经填写过地址
-      addressStatus:0,
+      addressStatus:1,
       //提交状态，防止重复提交
       addressSubmitStatus:false,
       //用户选择的照片信息
@@ -85,8 +85,8 @@ export default {
   },
   mounted(){
     // 获取用户数据，如果有地址，显示详细信息
-    native.clearBackActionCapture()
-    this.photoPrintStatus()
+    // native.clearBackActionCapture()
+    // this.photoPrintStatus()
   },
   methods: {
     // 获取用户活动信息

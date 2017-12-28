@@ -10,7 +10,7 @@
             if (clientWidth >= 750) {
                 docEl.style.fontSize = '200px';
             } else {
-                docEl.style.fontSize = 100* (innerWidth / 375) + 'px';
+                docEl.style.fontSize = 100* (innerWidth / 360) + 'px';
             }
             doc.body.style.display = '';
         };
@@ -32,3 +32,4 @@
 //     win.addEventListener(resizeEvt, recalc, false);
 //     doc.addEventListener('DOMContentLoaded', recalc, false);
 // })(document, window);
+// 

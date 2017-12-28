@@ -69,3 +69,8 @@ module.exports = {
     ]
   }
 }
+
+config.pages.forEach(function(page) {
+    console.info('$js页面', page, path.resolve(__dirname, '../src/template/' + page + '/index.js'))
+    module.exports.entry[page]=path.resolve(__dirname, '../src/template/' + page + '/index.js');
+});

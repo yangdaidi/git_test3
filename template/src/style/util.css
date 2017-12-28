@@ -1,0 +1,45 @@
+.u-ellipsis{overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+.u-ellipsis2{overflow: hidden;white-space: nowrap;}
+.u-filter{
+  -webkit-filter: blur(3px); /* Chrome, Opera */
+     -moz-filter: blur(3px);
+      -ms-filter: blur(3px);    
+          filter: blur(3px); 
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3, MakeShadow=false); /* IE6~IE9 */
+}
+.u-btn-active:active{transform:scale(0.95);}
+.u-legal-tips{text-align: center;line-height: 2rem;font-size: 0.14rem;color: #999;}
+
+
+.u-mgl-10{margin-left: 0.1rem !important;}
+
+.u-miaobian{
+	text-shadow:0 0 0.03rem #5e2713,0 0 0.03rem #5e2713,0 0 0.03rem #5e2713,-0 -0 0.03rem #5e2713;
+}
+.u-stroke-ios{
+	position: relative;
+    -webkit-text-stroke: 0.08rem #773820;
+    /*color: #773820*/
+    /*-webkit-text-fill-color: #fff;*/
+}
+.u-stroke-ios:after{
+  content: attr(data-text);
+  position: absolute;
+  -webkit-text-stroke: initial;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.u-stroke-aos{
+	position: relative;
+    -webkit-text-stroke: 0.04rem #773820;
+}
+.u-stroke-aos:after{
+  content: attr(data-text);
+  position: absolute;
+  -webkit-text-stroke: initial;
+  top: 0;
+  left: 0;
+  right: 0;
+}

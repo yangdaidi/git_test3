@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import App from '../App'
 // pages (add pages)
-import index from '@/pages/index'
+import address from '@/pages/address'
 
 Vue.use(Router)
 
@@ -15,14 +15,14 @@ export default new Router({
 	        {
 	            path: '',
 	            // redirect: '/index'
-	            component: index
+	            component: address
 	        },
 	        //首页
 	        {
-	            path: '/index',
-	            component: index
+	            path: '/address',
+	            component: address
 	        },
-	        // 新添加页面参考index
+	        // 新添加单页面参考address
  	  	]
   	}]
 })

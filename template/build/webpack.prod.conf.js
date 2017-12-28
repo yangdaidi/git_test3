@@ -122,3 +122,25 @@ if (config.build.bundleAnalyzerReport) {
 }
 
 module.exports = webpackConfig
+
+//根据enter创建同名html
+config.pages.forEach(function(page) {
+    console.info('$page页面', page, path.resolve(__dirname, '../src/template/' + page + '/index.html'))
+    var htmlPlugin = new HtmlWebpackPlugin({
+      filename: path.resolve(__dirname, '../../release/'+page+'.html'),
+      template: path.resolve(__dirname, '../src/template/' + page + '/index.html'),
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+        // more options:
+        // https://github.com/kangax/html-minifier#options-quick-reference
+      },
+      // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+      chunksSortMode: 'dependency',
+      excludeChunks: ['.*'],
+      chunks: [page,'vendor'],//需要引入的chunk，不配置就会引入所有页面的资源
+    });
+    webpackConfig.plugins.push(htmlPlugin);
+});

@@ -88,7 +88,6 @@ let api = {
     	url : host + '/live/square/search',  
     	method : 'POST'
     },
-
 }
 
 export { api, host };

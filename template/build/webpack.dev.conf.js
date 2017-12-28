@@ -1,3 +1,4 @@
+var path = require('path');
 var utils = require('./utils')
 var webpack = require('webpack')
 var config = require('../config')
@@ -28,8 +29,24 @@ module.exports = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
+      chunks: ['app'],
       inject: true
     }),
     new FriendlyErrorsPlugin()
   ]
 })
+
+//根据enter创建同名html
+config.pages.forEach(function(page) {
+    console.info('$page页面', page, path.resolve(__dirname, '../src/template/' + page + '/index.html'))
+    var htmlPlugin = new HtmlWebpackPlugin({
+        filename: page + '.html',
+        template: path.resolve(__dirname, '../src/template/' + page + '/index.html'),
+        inject: true,
+        chunks: [page],
+        minify: { //压缩HTML文件
+            removeComments: true //移除HTML中的注释
+        }
+    });
+    module.exports.plugins.push(htmlPlugin);
+});
